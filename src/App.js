@@ -3,6 +3,8 @@ import Header from './components/Header';
 import styled from '@emotion/styled';
 //Components
 import Form from './components/Form';
+import { useState } from 'react';
+import Resume from './components/Resume';
 
 //Styles
 const Container = styled.div`
@@ -16,11 +18,22 @@ const ContainerForm = styled.div`
   padding: 3rem;
 `;
 function App() {
+  const [resume, setResume] = useState({
+    quote: 0,
+    data: {
+      model: '',
+      year: '',
+      plan: '',
+    },
+  });
+  const { data } = resume;
+
   return (
     <Container>
       <Header />
       <ContainerForm>
-        <Form />
+        <Form setResume={setResume} />
+        <Resume data="data" />
       </ContainerForm>
     </Container>
   );

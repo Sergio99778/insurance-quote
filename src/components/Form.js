@@ -44,7 +44,7 @@ const Button = styled.button`
   }
 `;
 
-const Form = () => {
+const Form = ({ setResume }) => {
   //State
   const [data, setData] = useState({
     model: '',
@@ -76,7 +76,10 @@ const Form = () => {
       const increasePlan = checkPlan(plan);
       result = parseFloat(increasePlan * result).toFixed(2);
 
-      console.log(result);
+      setResume({
+        quote: result,
+        data,
+      });
     }
   };
 
