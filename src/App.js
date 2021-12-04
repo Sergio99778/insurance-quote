@@ -33,7 +33,7 @@ function App() {
       <Header />
       <ContainerForm>
         <Form setResume={setResume} />
-        <Resume data="data" />
+        <Resume data={data} />
       </ContainerForm>
     </Container>
   );

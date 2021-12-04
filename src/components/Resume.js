@@ -1,18 +1,28 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import styled from '@emotion/styled';
+import { firstCapital } from '../helper';
+
+const ResumeContainer = styled.div`
+  padding: 1rem;
+  text-align: center;
+  background-color: #00838f;
+  color: #fff;
+  margin-top: 1rem;
+`;
 
 const Resume = ({ data }) => {
   const { model, year, plan } = data;
   if (model === '' || year === '' || plan === '') return null;
 
   return (
-    <Fragment>
+    <ResumeContainer>
       <h2>Quote's resume</h2>
       <ul>
-        <li>Model: </li>
-        <li>Car's year: </li>
-        <li>Plan: </li>
+        <li>Model: {firstCapital(model)} </li>
+        <li>Car's year:{year} </li>
+        <li>Plan: {firstCapital(plan)}</li>
       </ul>
-    </Fragment>
+    </ResumeContainer>
   );
 };
 
