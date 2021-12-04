@@ -31,9 +31,11 @@ const Result = ({ quote }) => {
 
   return (
     <QuoteContainer>
-      <TransitionGroup component="p" className="resultado">
+      <TransitionGroup component="span" className="resultado">
         <CSSTransition classNames="resultado" key={quote} timeout={{ enter: 500, exit: 500 }}>
-          <QuoteText>Result: $ {quote}</QuoteText>
+          <QuoteText>
+            Result: $ <span>{quote}</span>
+          </QuoteText>
         </CSSTransition>
       </TransitionGroup>
     </QuoteContainer>

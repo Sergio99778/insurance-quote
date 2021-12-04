@@ -83,7 +83,7 @@ const Form = ({ setResume, setLoading }) => {
         setLoading(false);
 
         setResume({
-          quote: result,
+          quote: Number(result),
           data,
         });
       }, 1000);
