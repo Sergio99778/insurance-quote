@@ -6,6 +6,7 @@ import Form from './components/Form';
 import { useState } from 'react';
 import Resume from './components/Resume';
 import Result from './components/Result';
+import Spinner from './components/Spinner';
 
 //Styles
 const Container = styled.div`
@@ -27,15 +28,19 @@ function App() {
       plan: '',
     },
   });
+
+  const [loading, setLoading] = useState(false);
+
   const { quote, data } = resume;
 
   return (
     <Container>
       <Header />
       <ContainerForm>
-        <Form setResume={setResume} />
+        <Form setResume={setResume} setLoading={setLoading} />
+        {loading ? <Spinner /> : null}
         <Resume data={data} />
-        <Result quote={quote} />
+        {!loading ? <Result quote={quote} /> : null}
       </ContainerForm>
     </Container>
   );

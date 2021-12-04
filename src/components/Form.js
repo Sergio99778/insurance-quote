@@ -44,7 +44,7 @@ const Button = styled.button`
   }
 `;
 
-const Form = ({ setResume }) => {
+const Form = ({ setResume, setLoading }) => {
   //State
   const [data, setData] = useState({
     model: '',
@@ -76,10 +76,16 @@ const Form = ({ setResume }) => {
       const increasePlan = checkPlan(plan);
       result = parseFloat(increasePlan * result).toFixed(2);
 
-      setResume({
-        quote: result,
-        data,
-      });
+      setLoading(true);
+
+      setTimeout(() => {
+        setLoading(false);
+
+        setResume({
+          quote: result,
+          data,
+        });
+      }, 1000);
     }
   };
 
