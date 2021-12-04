@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import Form from './components/Form';
 import { useState } from 'react';
 import Resume from './components/Resume';
+import Result from './components/Result';
 
 //Styles
 const Container = styled.div`
@@ -26,7 +27,7 @@ function App() {
       plan: '',
     },
   });
-  const { data } = resume;
+  const { quote, data } = resume;
 
   return (
     <Container>
@@ -34,6 +35,7 @@ function App() {
       <ContainerForm>
         <Form setResume={setResume} />
         <Resume data={data} />
+        <Result quote={quote} />
       </ContainerForm>
     </Container>
   );
