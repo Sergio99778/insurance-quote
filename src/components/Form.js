@@ -22,8 +22,8 @@ const Select = styled.select`
   -webkit-appearance: none;
 `;
 
-const InputRadio = styled.input`
-  margin: 0 1rem;
+const ContainerRadio = styled.div`
+  margin-right: 10px;
 `;
 
 const Button = styled.button`
@@ -111,10 +111,14 @@ const Form = ({ setResume }) => {
       </Field>
       <Field className="">
         <Label htmlFor="">Plan: </Label>
-        <InputRadio type="radio" name="plan" id="" value="basic" checked={plan === 'basic'} onChange={handleChange} />
-        Basic
-        <InputRadio type="radio" name="plan" id="" value="complete" checked={plan === 'complete'} onChange={handleChange} />
-        Complete
+        <ContainerRadio>
+          <input type="radio" name="plan" id="basic" value="basic" checked={plan === 'basic'} onChange={handleChange} />
+          <label htmlFor="basic">Basic</label>
+        </ContainerRadio>
+        <ContainerRadio>
+          <input type="radio" name="plan" id="complete" value="complete" checked={plan === 'complete'} onChange={handleChange} />
+          <label htmlFor="complete">Complete</label>
+        </ContainerRadio>
       </Field>
       <Button type="submit">Quote</Button>
     </form>
