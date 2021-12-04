@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { getDifferenceYears, checkModel, checkPlan } from '../helper';
+import PropTypes from 'prop-types';
 
 //Components
 import Error from './Error';
@@ -129,6 +130,11 @@ const Form = ({ setResume, setLoading }) => {
       <Button type="submit">Quote</Button>
     </form>
   );
+};
+
+Form.propTypes = {
+  setResume: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
 export default Form;

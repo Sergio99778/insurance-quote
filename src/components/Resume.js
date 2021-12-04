@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { firstCapital } from '../helper';
+import PropTypes from 'prop-types';
 
 const ResumeContainer = styled.div`
   padding: 1rem;
@@ -24,6 +25,10 @@ const Resume = ({ data }) => {
       </ul>
     </ResumeContainer>
   );
+};
+
+Resume.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export default Resume;
